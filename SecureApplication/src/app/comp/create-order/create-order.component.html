@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #6C63FF, #1E90FF);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 800px;
+            height: 300px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #007BFF;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .sign-out{
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    float: right;
+}
+    </style>
+</head>
+<a href="/dashboard"><button class="sign-out">Sign out</button></a>
+<body>
+    <div class="container">
+            <h2 class="fw-bold mb-4">Please Order a book</h2>
+            <label>
+                <input type="radio" name="orderName" value="book1" [(ngModel)]="orderName" > Network Security Essentials Application and Standards 5th Edition William Stallings $60.00
+            </label>
+            <label>
+                <input type="radio" name="orderName" value="book2" [(ngModel)]="orderName"> Fundamentals of Database Systems 7th Edition Elmasri . Navathe $150.00
+            </label>
+            <label>
+                <input type="radio" name="orderName" value="book3" [(ngModel)]="orderName"> Artificial Intelligence A Modern Approach Fourth Edition Staurt Russell Peter Norvig $160.00
+            </label>
+            <p></p>
+            <p></p>
+            <button class="btn btn-primary" (click)="onClickSubmit()" type="submit">Create Order</button>        
+
+        <a class="back-button" href="/order-dashboard">Back to Order Dashboard</a>
+    </div>
+</body>
+</html>

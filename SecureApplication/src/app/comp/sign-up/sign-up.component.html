@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #6C63FF, #1E90FF);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #007BFF;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+            <h2 class="fw-bold mb-4">Create Account</h2>
+            <input type="text" [(ngModel)]="fname"  class="form-control" placeholder="First Name">
+        <input type="text" [(ngModel)]="lname"  class="form-control" placeholder="Last Name">
+        <input type="text"  [(ngModel)]="phone" inputmode="numeric" class="form-control" placeholder="(XXX) XXX-XXXX"  mask="(000) 000-0000">
+        <input type="text" [(ngModel)]="email"  class="form-control" placeholder="Email">
+        <input type="text" [(ngModel)]="address"  class="form-control" placeholder="Address">  
+        <input type="text" [(ngModel)]="city"  class="form-control" placeholder="City">  
+        <input type="text" [(ngModel)]="zipCode"  class="form-control" placeholder="Zipcode">          
+        <input type="password" [(ngModel)]="password"  class="form-control" placeholder="Password">
+        <input type="password" [(ngModel)]="confirm"  class="form-control" placeholder=" Confirm Password">
+            <p style="text-align: left; margin-bottom: 10px;">
+              * Must be at least 16 characters <br>
+              * Must contain an upper case character <br>
+              * Must contain a lower case character <br>
+              * Must contain at least one number <br>
+              * Must contain at least one special character
+            </p>
+            
+            <button class="btn btn-primary" (click)="onClickSubmit()" type="submit">Create New Account</button>        
+        <div class="error-Validation">
+            <p>{{value}}</p>
+        </div>
+        <a class="back-button" href="/dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>
